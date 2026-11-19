@@ -1,14 +1,15 @@
+﻿
 COMPOSE = docker compose -f srcs/docker-compose.yml
-DATA    = /home/tiade-al/data
+DATA = /home/joaoleote/data
 SECRETS = secrets/db_root_password.txt secrets/db_password.txt \
           secrets/wp_admin_password.txt secrets/wp_user_password.txt
 
 all: up
 
 check:
-	@test -f srcs/.env || (echo "Missing srcs/.env (copy srcs/.env.example)"; exit 1)
+	@test -f srcs/.env || (echo "Missing srcs/.env"; exit 1)
 	@for f in $(SECRETS); do \
-		test -s $$f || (echo "Missing or empty $$f"; exit 1) || exit 1; \
+		test -s $$f || { echo "Missing or empty $$f"; exit 1; }; \
 	done
 
 up: check

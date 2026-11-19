@@ -1,4 +1,4 @@
-services:
+﻿services:
   mariadb:
     container_name: mariadb
     build:
@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: mariadb:inception
     env_file:
-      - ../.env
+      - .env
     secrets:
       - db_root_password
       - db_password
@@ -23,7 +23,7 @@ services:
       dockerfile: Dockerfile
     image: wordpress:inception
     env_file:
-      - ../.env
+      - .env
     secrets:
       - db_password
       - wp_admin_password
@@ -43,7 +43,7 @@ services:
       dockerfile: Dockerfile
     image: nginx:inception
     env_file:
-      - ../.env
+      - .env
     ports:
       - "443:443"
     volumes:
