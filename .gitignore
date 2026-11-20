@@ -1,0 +1,10 @@
+# Environment variables
+srcs/.env
+
+# Docker secrets
+secrets/
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp

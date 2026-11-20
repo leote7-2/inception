@@ -1,6 +1,5 @@
-﻿
-COMPOSE = docker compose -f srcs/docker-compose.yml
-DATA = /home/joaoleote/data
+﻿COMPOSE = docker compose -f srcs/docker-compose.yml
+DATA = /home/jhenriq2/data
 SECRETS = secrets/db_root_password.txt secrets/db_password.txt \
           secrets/wp_admin_password.txt secrets/wp_user_password.txt
 
